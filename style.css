@@ -1,0 +1,234 @@
+/* GLOBAL RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #eef2f3;
+    color: #333;
+}
+
+/* NAVBAR */
+.navbar {
+    background: linear-gradient(90deg, #28a745, #218838);
+    color: white;
+    padding: 18px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* CONTAINER */
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 20px auto;
+}
+
+/* CARD DESIGN */
+.card {
+    background: white;
+    border-radius: 14px;
+    padding: 20px;
+    margin: 15px 0;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: slideUp 0.6s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+/* INPUT */
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #28a745;
+    outline: none;
+}
+
+/* BUTTON */
+.btn {
+    background: #28a745;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+.btn:hover {
+    background: #218838;
+}
+
+/* SUCCESS MESSAGE */
+.msg {
+    padding: 12px 18px;
+    margin: 12px 0;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #28a745, #1e7e34);
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    font-size: 15px;
+    animation: fadeIn 0.6s ease-in-out;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* PICKUP CARD */
+.pickup-card {
+    background: white;
+    border-radius: 14px;
+    padding: 18px;
+    margin: 12px 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    animation: slideUp 0.6s ease-in-out;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pickup-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+/* STATUS BADGE */
+.status {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+.status.pending { background: #fff3cd; color: #856404; }
+.status.completed { background: #d4edda; color: #155724; }
+.status.rejected { background: #f8d7da; color: #721c24; }
+
+/* ADMIN DASHBOARD LAYOUT */
+.admin-layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* SIDEBAR */
+.admin-sidebar {
+    width: 240px;
+    background: linear-gradient(180deg, #1e7e34, #28a745);
+    padding: 25px;
+    color: white;
+    animation: slideInLeft 0.6s ease-in-out;
+}
+
+.admin-sidebar h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.admin-sidebar a {
+    display: block;
+    padding: 12px;
+    margin: 12px 0;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.3s;
+    font-weight: 500;
+}
+
+.admin-sidebar a:hover {
+    background: rgba(255,255,255,0.2);
+    transform: translateX(6px);
+}
+
+/* MAIN CONTENT */
+.admin-main {
+    flex: 1;
+    padding: 40px;
+}
+
+/* ADMIN CARDS */
+.admin-card-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.admin-card {
+    background: white;
+    padding: 25px;
+    border-radius: 14px;
+    width: 220px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    transition: 0.3s;
+    animation: slideUp 0.6s ease-in-out;
+}
+
+.admin-card:hover {
+    transform: translateY(-8px);
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+
+    .admin-layout {
+        flex-direction: column;
+    }
+
+    .admin-sidebar {
+        width: 100%;
+        text-align: center;
+    }
+
+    .admin-card-container {
+        justify-content: center;
+    }
+}
+
